@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>git clo
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campusly | Student Management System</title>
+<style>
+:root{--bg:#f7f6ff;--panel:#fff;--ink:#24213d;--muted:#85839d;--purple:#7867e8;--purple2:#a89cf6;--line:#eeecf7;--mint:#dcf7ed;--peach:#fff0e4;--blue:#e6f0ff;--shadow:0 12px 35px rgba(56,44,111,.07)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:28px 18px;display:flex;flex-direction:column;gap:30px}.brand{display:flex;align-items:center;gap:11px;padding:0 10px}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(140deg,#8e7df4,#6757d8);display:grid;place-items:center;color:white;font-size:21px;font-weight:800;box-shadow:0 8px 16px #8e7df444}.brand strong{font-size:21px;letter-spacing:-.7px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.nav-label{font-size:10px;letter-spacing:1.5px;color:#aaa7bf;font-weight:800;padding:0 13px;margin-bottom:9px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#79768f;text-align:left;padding:13px 14px;border-radius:12px;display:flex;align-items:center;gap:13px;font-size:13px;font-weight:650}.nav button .ico{font-size:17px;width:20px;text-align:center}.nav button.active{background:#f0edff;color:#6f5be1}.nav button:hover:not(.active){background:#faf9ff}.sidebar-bottom{margin-top:auto;background:linear-gradient(145deg,#f1eeff,#f9f8ff);border:1px solid #eae6ff;border-radius:17px;padding:17px}.sidebar-bottom .mini-icon{font-size:24px}.sidebar-bottom strong{display:block;margin:8px 0 5px;font-size:13px}.sidebar-bottom p{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 12px}.sidebar-bottom button{width:100%;border:0;border-radius:10px;background:#7867e8;color:white;padding:10px;font-size:11px;font-weight:700}.main{padding:28px 34px 40px;max-width:1600px;width:100%;margin:0 auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px}.eyebrow{font-size:11px;color:var(--muted);margin-bottom:6px}.topbar h1{font-size:27px;letter-spacing:-1px;margin:0}.top-actions{display:flex;align-items:center;gap:13px}.search{position:relative}.search input{width:230px;padding:12px 14px 12px 38px;border:1px solid var(--line);background:#fff;border-radius:12px;outline:none;font-size:12px}.search span{position:absolute;left:13px;top:10px;color:#aaa7bf}.icon-btn{border:1px solid var(--line);background:white;border-radius:12px;width:42px;height:42px;font-size:17px;position:relative}.dot{width:6px;height:6px;background:#f58d9e;border-radius:50%;position:absolute;top:9px;right:9px}.profile{display:flex;align-items:center;gap:9px}.avatar{width:39px;height:39px;border-radius:14px;background:#e7e1ff;color:#6c5be0;display:grid;place-items:center;font-size:12px;font-weight:800}.profile strong{display:block;font-size:12px}.profile small{display:block;font-size:10px;color:var(--muted);margin-top:3px}.welcome{border-radius:22px;padding:26px 30px;background:linear-gradient(110deg,#7565e4,#9c8cf2);color:#fff;display:flex;justify-content:space-between;align-items:center;overflow:hidden;position:relative;min-height:160px;box-shadow:0 15px 35px #7968e52b}.welcome:after{content:"";position:absolute;width:220px;height:220px;border:1px solid #ffffff32;border-radius:50%;right:105px;top:-100px;box-shadow:0 0 0 28px #ffffff0d,0 0 0 57px #ffffff0a}.welcome h2{font-size:24px;letter-spacing:-.7px;margin:0 0 9px}.welcome p{font-size:12px;opacity:.85;margin:0;line-height:1.6}.welcome button{border:0;background:#fff;color:#6e5de0;border-radius:11px;padding:12px 17px;font-size:12px;font-weight:750;position:relative;z-index:1;white-space:nowrap}.welcome .spark{font-size:72px;opacity:.9;margin-right:28px;z-index:1}.section-head{display:flex;justify-content:space-between;align-items:center;margin:27px 0 15px}.section-head h3{font-size:16px;margin:0;letter-spacing:-.3px}.section-head a{font-size:11px;color:var(--purple);font-weight:700;cursor:pointer}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:var(--shadow)}.stat-top{display:flex;align-items:center;justify-content:space-between}.stat-icon{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;font-size:18px}.stat:nth-child(1) .stat-icon{background:#eeeaff}.stat:nth-child(2) .stat-icon{background:var(--mint)}.stat:nth-child(3) .stat-icon{background:var(--peach)}.stat:nth-child(4) .stat-icon{background:var(--blue)}.trend{font-size:10px;color:#25a879;background:#e7faf2;padding:5px 7px;border-radius:7px;font-weight:700}.stat h2{font-size:27px;letter-spacing:-1px;margin:16px 0 5px}.stat p{font-size:11px;color:var(--muted);margin:0}.content-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,1fr);gap:18px;margin-top:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow);min-width:0}.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px}.panel-head h3{font-size:15px;margin:0}.panel-head p{font-size:10px;color:var(--muted);margin:5px 0 0}.select{border:1px solid var(--line);background:#fff;color:#77738e;padding:8px 10px;border-radius:9px;font-size:10px}.chart{height:190px;display:flex;align-items:flex-end;gap:13px;padding:10px 5px 0;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to bottom,transparent 0,transparent 45px,#f3f1fa 46px)}.bar-group{height:100%;flex:1;display:flex;align-items:flex-end;justify-content:center;gap:4px;position:relative}.bar{width:10px;border-radius:5px 5px 2px 2px;background:#dcd6ff;min-height:8px}.bar.strong{background:linear-gradient(#9b8bf5,#7463e4)}.bar-group label{position:absolute;bottom:-24px;font-size:10px;color:#9996ad}.legend{display:flex;justify-content:center;gap:18px;margin-top:33px;font-size:10px;color:var(--muted)}.legend span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:3px;background:#8d7cf0;margin-right:6px}.legend span+span:before{background:#dcd6ff}.attendance-ring{display:flex;align-items:center;justify-content:center;padding:12px 0 18px}.ring{width:142px;height:142px;border-radius:50%;background:conic-gradient(#7968e7 0 76%,#eeeaff 76% 100%);display:grid;place-items:center;position:relative}.ring:before{content:"";position:absolute;inset:13px;background:#fff;border-radius:50%}.ring-inner{z-index:1;text-align:center}.ring-inner strong{font-size:29px;letter-spacing:-1px;display:block}.ring-inner small{font-size:10px;color:var(--muted)}.attendance-key{display:grid;gap:13px}.key-row{display:flex;align-items:center;justify-content:space-between;font-size:11px}.key-left{display:flex;align-items:center;gap:8px;color:#77738e}.key-dot{width:8px;height:8px;border-radius:3px;background:#7968e7}.key-dot.pale{background:#eeeaff}.key-row strong{font-size:11px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;font-size:10px;color:#a09db3;font-weight:700;padding:0 12px 13px;border-bottom:1px solid var(--line)}td{padding:13px 12px;border-bottom:1px solid #f5f3fa;font-size:11px}tr:last-child td{border-bottom:0}.student{display:flex;align-items:center;gap:9px}.student-avatar{width:32px;height:32px;border-radius:11px;display:grid;place-items:center;font-size:10px;font-weight:800;background:#f0eaff;color:#7b68e8}.student-avatar.green{background:#e1f8ee;color:#3ba783}.student-avatar.orange{background:#fff0e3;color:#c77a3e}.student-avatar.blue{background:#e6f0ff;color:#5185cc}.student strong{display:block;font-size:11px}.student small{display:block;color:#a09db3;font-size:9px;margin-top:3px}.status{padding:6px 8px;border-radius:7px;font-size:9px;font-weight:700}.status.active{background:#e5f8ef;color:#2a9c71}.status.pending{background:#fff2df;color:#c48a31}.status.inactive{background:#f0eff5;color:#89869d}.table-actions{display:flex;gap:5px}.table-actions button{border:0;background:#f5f3ff;color:#7b68e8;border-radius:7px;padding:6px 8px;font-size:10px}.bottom-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:20px}.activity-list{display:grid;gap:17px}.activity{display:flex;gap:12px;align-items:flex-start}.activity-icon{width:34px;height:34px;flex-shrink:0;border-radius:11px;background:#f0edff;display:grid;place-items:center}.activity strong{font-size:11px;display:block;margin:1px 0 5px}.activity p{font-size:10px;color:var(--muted);margin:0;line-height:1.5}.activity time{display:block;font-size:9px;color:#aaa7bf;margin-top:5px}.course-list{display:grid;gap:16px}.course-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;margin-bottom:8px}.course-top span{color:var(--muted);font-size:10px}.progress{height:7px;border-radius:10px;background:#f0eef8;overflow:hidden}.progress i{display:block;height:100%;border-radius:10px;background:linear-gradient(90deg,#9d8cf6,#7160df)}.footer{text-align:center;font-size:10px;color:#aaa7bf;padding:26px 0 0}.modal-backdrop{position:fixed;inset:0;background:#24213d66;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal-backdrop.show{display:flex}.modal{background:white;border-radius:20px;padding:24px;width:min(440px,100%);box-shadow:0 20px 70px #24213d30}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modal-head h3{margin:0;font-size:18px}.close{border:0;background:#f3f1fb;border-radius:9px;width:32px;height:32px}.form-grid{display:grid;gap:13px}.form-grid label{font-size:11px;font-weight:700;color:#6f6b85;display:grid;gap:7px}.form-grid input,.form-grid select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;outline:none;background:white;font-size:12px}.primary{border:0;background:var(--purple);color:white;border-radius:11px;padding:12px 15px;font-weight:750;font-size:12px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#282443;color:white;padding:12px 18px;border-radius:12px;font-size:12px;display:none;z-index:20;box-shadow:var(--shadow)}.toast.show{display:block}
+@media(max-width:1100px){.app{grid-template-columns:215px minmax(0,1fr)}.main{padding:24px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.content-grid{grid-template-columns:1fr}.bottom-grid{grid-template-columns:1fr}.search input{width:180px}}
+@media(max-width:720px){.app{display:block}.sidebar{padding:15px 16px;display:block;border-right:0;border-bottom:1px solid var(--line)}.brand{padding:0 2px}.sidebar .nav-label,.sidebar-bottom{display:none}.nav{display:flex;overflow-x:auto;margin-top:15px;gap:5px}.nav button{white-space:nowrap;padding:10px 12px;font-size:11px}.nav button .ico{font-size:14px;width:auto}.main{padding:22px 15px}.topbar{align-items:flex-start;margin-bottom:20px}.topbar h1{font-size:22px}.top-actions{gap:7px}.search{display:none}.profile .profile-text{display:none}.welcome{padding:22px;min-height:150px}.welcome h2{font-size:20px}.welcome .spark{font-size:48px;margin-right:0}.welcome button{padding:10px;font-size:10px}.stats{gap:10px}.stat{padding:15px}.stat h2{font-size:24px}.stat p{font-size:10px}.panel{padding:16px}.chart{gap:7px}.bar{width:7px}.section-head{margin-top:22px}.table-wrap{margin:0 -5px}.bottom-grid{margin-top:15px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">C</div><div><strong>campusly</strong><small>Student management</small></div></div>
+  <div><div class="nav-label">WORKSPACE</div><nav class="nav">
+    <button class="active" data-page="Dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="Students"><span class="ico">♙</span>Students</button>
+    <button data-page="Courses"><span class="ico">▤</span>Courses</button>
+    <button data-page="Attendance"><span class="ico">◷</span>Attendance</button>
+    <button data-page="Examinations"><span class="ico">✎</span>Examinations</button>
+    <button data-page="Reports"><span class="ico">▥</span>Reports</button>
+  </nav></div>
+  <div><div class="nav-label">PREFERENCES</div><nav class="nav"><button data-page="Settings"><span class="ico">⚙</span>Settings</button></nav></div>
+  <div class="sidebar-bottom"><div class="mini-icon">✨</div><strong>Keep everything in one place</strong><p>Organise student records, attendance and academic progress with ease.</p><button onclick="showToast('You are using the Campusly demo!')">Explore workspace ↗</button></div>
+</aside>
+<main class="main">
+  <header class="topbar"><div><div class="eyebrow">THURSDAY, OCTOBER 29, 2026</div><h1 id="pageTitle">Dashboard overview</h1></div><div class="top-actions"><div class="search"><span>⌕</span><input id="searchInput" placeholder="Search students..." oninput="renderStudents()"></div><button class="icon-btn" aria-label="Notifications" onclick="showToast('You’re all caught up!')">♧<i class="dot"></i></button><div class="profile"><div class="avatar">SC</div><div class="profile-text"><strong>Safwa C.A.</strong><small>Administrator</small></div></div></div></header>
+  <section class="welcome"><div><div style="font-size:10px;letter-spacing:1.6px;font-weight:800;opacity:.8;margin-bottom:12px">YOUR CAMPUS, SIMPLIFIED</div><h2>Good morning, Safwa! ✨</h2><p>Here’s what’s happening with your students today.<br>Small steps make a big difference.</p><div style="margin-top:18px"><button onclick="openModal()">＋ Add new student</button></div></div><div class="spark">✦</div></section>
+  <div class="section-head"><h3>At a glance</h3><a onclick="showToast('Showing the latest overview')">View insights ↗</a></div>
+  <section class="stats">
+    <article class="stat"><div class="stat-top"><div class="stat-icon">♙</div><span class="trend">↗ 8.2%</span></div><h2 id="totalStudents">248</h2><p>Total students enrolled</p></article>
+    <article class="stat"><div class="stat-top"><div class="stat-icon">✓</div><span class="trend">↗ 2.4%</span></div><h2>92.6%</h2><p>Average attendance</p></article>
+    <article class="stat"><div class="stat-top"><div class="stat-icon">▤</div><span class="trend">This term</span></div><h2>12</h2><p>Active courses</p></article>
+    <article class="stat"><div class="stat-top"><div class="stat-icon">✧</div><span class="trend">↗ 4.1%</span></div><h2>86.4%</h2><p>Average performance</p></article>
+  </section>
+  <section class="content-grid">
+    <article class="panel"><div class="panel-head"><div><h3>Student enrollment</h3><p>Enrollment activity throughout the year</p></div><select class="select" aria-label="Enrollment period" onchange="showToast('Period changed to '+this.value)"><option>This year</option><option>Last year</option><option>This term</option></select></div>
+      <div class="chart" aria-label="Enrollment bar chart"><div class="bar-group"><div class="bar" style="height:35%"></div><div class="bar strong" style="height:48%"></div><label>Jan</label></div><div class="bar-group"><div class="bar" style="height:42%"></div><div class="bar strong" style="height:57%"></div><label>Feb</label></div><div class="bar-group"><div class="bar" style="height:48%"></div><div class="bar strong" style="height:62%"></div><label>Mar</label></div><div class="bar-group"><div class="bar" style="height:40%"></div><div class="bar strong" style="height:53%"></div><label>Apr</label></div><div class="bar-group"><div class="bar" style="height:58%"></div><div class="bar strong" style="height:72%"></div><label>May</label></div><div class="bar-group"><div class="bar" style="height:54%"></div><div class="bar strong" style="height:67%"></div><label>Jun</label></div><div class="bar-group"><div class="bar" style="height:65%"></div><div class="bar strong" style="height:82%"></div><label>Jul</label></div><div class="bar-group"><div class="bar" style="height:60%"></div><div class="bar strong" style="height:76%"></div><label>Aug</label></div><div class="bar-group"><div class="bar" style="height:71%"></div><div class="bar strong" style="height:91%"></div><label>Sep</label></div><div class="bar-group"><div class="bar" style="height:65%"></div><div class="bar strong" style="height:84%"></div><label>Oct</label></div><div class="bar-group"><div class="bar" style="height:75%"></div><div class="bar strong" style="height:96%"></div><label>Nov</label></div><div class="bar-group"><div class="bar" style="height:70%"></div><div class="bar strong" style="height:88%"></div><label>Dec</label></div></div><div class="legend"><span>New enrollment</span><span style="--unused:1">Total student count</span></div>
+    </article>
+    <article class="panel"><div class="panel-head"><div><h3>Attendance overview</h3><p>Today's attendance summary</p></div><span style="font-size:17px;color:#8b7be9">•••</span></div><div class="attendance-ring"><div class="ring"><div class="ring-inner"><strong>92.6%</strong><small>Present today</small></div></div></div><div class="attendance-key"><div class="key-row"><div class="key-left"><i class="key-dot"></i>Present</div><strong>230 students</strong></div><div class="key-row"><div class="key-left"><i class="key-dot pale"></i>Absent</div><strong>18 students</strong></div></div></article>
+  </section>
+  <section class="panel" style="margin-top:20px"><div class="panel-head"><div><h3>Recently added students</h3><p>Manage student profiles and enrollment status</p></div><button class="primary" onclick="openModal()">＋ Add student</button></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>STUDENT ID</th><th>COURSE</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="studentRows"></tbody></table></div></section>
+  <section class="bottom-grid">
+    <article class="panel"><div class="panel-head"><div><h3>Recent activity</h3><p>Latest updates across your campus</p></div><a style="font-size:10px;color:#7867e8;cursor:pointer" onclick="showToast('You are viewing recent activity')">See all</a></div><div class="activity-list"><div class="activity"><div class="activity-icon">♙</div><div><strong>New student registered</strong><p>Amal Nair has been added to Computer Science.</p><time>10 minutes ago</time></div></div><div class="activity"><div class="activity-icon" style="background:#e1f8ee">✓</div><div><strong>Attendance updated</strong><p>Today's attendance records have been saved.</p><time>35 minutes ago</time></div></div><div class="activity"><div class="activity-icon" style="background:#fff0e3">✎</div><div><strong>Examination marks published</strong><p>Internal assessment results are ready to view.</p><time>2 hours ago</time></div></div></div></article>
+    <article class="panel"><div class="panel-head"><div><h3>Course progress</h3><p>Student progress by department</p></div></div><div class="course-list"><div><div class="course-top"><strong>Computer Science</strong><span>86%</span></div><div class="progress"><i style="width:86%"></i></div></div><div><div class="course-top"><strong>Information Technology</strong><span>74%</span></div><div class="progress"><i style="width:74%"></i></div></div><div><div class="course-top"><strong>Electronics</strong><span>68%</span></div><div class="progress"><i style="width:68%"></i></div></div><div><div class="course-top"><strong>Mechanical Engineering</strong><span>79%</span></div><div class="progress"><i style="width:79%"></i></div></div></div></article>
+  </section>
+  <footer class="footer">Made with care for better campus management · Campusly © 2026</footer>
+</main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h3>Add a student</h3><button class="close" onclick="closeModal()">✕</button></div><form id="studentForm" class="form-grid"><label>Full name<input id="studentName" required placeholder="e.g. Amina Rahman"></label><label>Student ID<input id="studentId" required placeholder="e.g. STU-0249"></label><label>Course<select id="studentCourse"><option>Computer Science</option><option>Information Technology</option><option>Electronics</option><option>Mechanical Engineering</option></select></label><label>Status<select id="studentStatus"><option>Active</option><option>Pending</option><option>Inactive</option></select></label><button class="primary" type="submit">Save student profile</button></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+let students = [
+  {name: "Amal Nair", id: "STU-0248", course: "Computer Science", status: "Active", initials: "AN", color: "green"},
+  {name: "Aisha Mohammed", id: "STU-0247", course: "Information Technology", status: "Active", initials: "AM", color: ""},
+  {name: "Rohan Menon", id: "STU-0246", course: "Electronics", status: "Pending", initials: "RM", color: "orange"},
+  {name: "Diya Thomas", id: "STU-0245", course: "Computer Science", status: "Active", initials: "DT", color: "blue"},
+  {name: "Adil Hassan", id: "STU-0244", course: "Mechanical Engineering", status: "Inactive", initials: "AH", color: "green"}
+];
+
+let editingStudentId = null; // Tracks if we are editing an existing student
+
+function renderStudents() {
+  let q = (document.getElementById('searchInput')?.value || '').toLowerCase();
+  let filtered = students.filter(s => (s.name + s.id + s.course + s.status).toLowerCase().includes(q));
+  
+  document.getElementById('studentRows').innerHTML = filtered.map((s, i) => `<tr>
+    <td><div class="student"><div class="student-avatar ${s.color}">${s.initials}</div><div><strong>${escapeHtml(s.name)}</strong><small>Student</small></div></div></td>
+    <td>${escapeHtml(s.id)}</td><td>${escapeHtml(s.course)}</td>
+    <td><span class="status ${s.status.toLowerCase()}">${s.status}</span></td>
+    <td><div class="table-actions">
+      <button onclick="editStudent('${s.id}')">Edit</button>
+      <button onclick="removeStudent('${s.id}')">Delete</button>
+    </div></td></tr>`).join('') || '<tr><td colspan="5" style="text-align:center;color:#999;padding:25px">No students found.</td></tr>';
+}
+
+function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function openModal() {
+  editingStudentId = null; // Reset edit state
+  document.getElementById('studentForm').reset();
+  document.querySelector('.modal-head h3').textContent = 'Add a student';
+  document.querySelector('#studentForm button[type="submit"]').textContent = 'Save student profile';
+  document.getElementById('modalBackdrop').classList.add('show');
+  document.getElementById('studentName').focus();
+}
+
+function editStudent(id) {
+  let s = students.find(x => x.id === id);
+  if (!s) return;
+  
+  editingStudentId = id; // Set edit state
+  document.getElementById('studentName').value = s.name;
+  document.getElementById('studentId').value = s.id;
+  document.getElementById('studentCourse').value = s.course;
+  document.getElementById('studentStatus').value = s.status;
+  
+  document.querySelector('.modal-head h3').textContent = 'Edit student';
+  document.querySelector('#studentForm button[type="submit"]').textContent = 'Update student';
+  document.getElementById('modalBackdrop').classList.add('show');
+}
+
+function closeModal() { document.getElementById('modalBackdrop').classList.remove('show'); }
+
+function showToast(msg) {
+  let t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+document.getElementById('studentForm').addEventListener('submit', e => {
+  e.preventDefault();
+  let name = document.getElementById('studentName').value.trim();
+  let id = document.getElementById('studentId').value.trim();
+  let course = document.getElementById('studentCourse').value;
+  let status = document.getElementById('studentStatus').value;
+
+  if (editingStudentId) {
+    // Logic for Updating an existing student
+    if (students.some(s => s.id.toLowerCase() === id.toLowerCase() && s.id !== editingStudentId)) {
+      showToast('That student ID already exists.'); return;
+    }
+    let s = students.find(x => x.id === editingStudentId);
+    if (s) {
+      s.name = name; s.id = id; s.course = course; s.status = status;
+      s.initials = name.split(/\s+/).map(x => x[0]).join('').slice(0, 2).toUpperCase();
+    }
+    showToast('Student profile updated!');
+  } else {
+    // Logic for Adding a new student
+    if (students.some(s => s.id.toLowerCase() === id.toLowerCase())) {
+      showToast('That student ID already exists.'); return;
+    }
+    students.unshift({
+      name, id, course, status,
+      initials: name.split(/\s+/).map(x => x[0]).join('').slice(0, 2).toUpperCase(),
+      color: ['', 'green', 'orange', 'blue'][students.length % 4]
+    });
+    document.getElementById('totalStudents').textContent = 248 + students.length - 5;
+    showToast('Student profile added successfully!');
+  }
+  
+  renderStudents();
+  closeModal();
+});
+function removeStudent(id) {
+  let s = students.find(x => x.id === id);
+  if (!s) return;
+  if (confirm('Delete ' + s.name + ' from the demo student list?')) {
+    students = students.filter(x => x.id !== id);
+    renderStudents();
+    document.getElementById('totalStudents').textContent = 248 + students.length - 5;
+    showToast('Student removed from demo list.');
+  }
+}
+
+function exportCSV() {
+  let csvContent = "data:text/csv;charset=utf-8,Name,ID,Course,Status\n" 
+    + students.map(s => `${s.name},${s.id},${s.course},${s.status}`).join("\n");
+  let link = document.createElement("a");
+  link.href = encodeURI(csvContent);
+  link.download = "campusly_students.csv";
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  showToast("Student list exported!");
+}
+
+document.querySelectorAll('.nav button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.nav button').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  let page = b.dataset.page;
+  document.getElementById('pageTitle').textContent = page === 'Dashboard' ? 'Dashboard overview' : page + ' overview';
+  if (page !== 'Dashboard') showToast(page + ' preview · Use the dashboard demo to explore features.');
+}));
+
+renderStudents();
+document.getElementById('searchBox').addEventListener('input', function(e) {
+  let searchString = e.target.value.toLowerCase();
+  
+  // This targets your student panels
+  let studentPanels = document.querySelectorAll('.panel'); 
+
+  studentPanels.forEach(panel => {
+    if (panel.textContent.toLowerCase().includes(searchString)) {
+      panel.style.display = ''; 
+    } else {
+      panel.style.display = 'none'; 
+    }
+  });
+});
+</script>
+</body>
+</html>
