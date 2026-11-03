@@ -27,7 +27,7 @@
   <div class="sidebar-bottom"><div class="mini-icon">✨</div><strong>Keep everything in one place</strong><p>Organise student records, attendance and academic progress with ease.</p><button onclick="showToast('You are using the Campusly demo!')">Explore workspace ↗</button></div>
 </aside>
 <main class="main">
-  <header class="topbar"><div><div class="eyebrow">THURSDAY, OCTOBER 29, 2026</div><h1 id="pageTitle">Dashboard overview</h1></div><div class="top-actions"><div class="search"><span>⌕</span><input id="searchInput" placeholder="Search students..." oninput="renderStudents()"></div><button class="icon-btn" aria-label="Notifications" onclick="showToast('You’re all caught up!')">♧<i class="dot"></i></button><div class="profile"><div class="avatar">SC</div><div class="profile-text"><strong>Safwa C.A.</strong><small>Administrator</small></div></div></div></header>
+  <header class="topbar"<button onclick="toggleDarkMode()" style="padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-left: auto;">Dark Mode</button>><div><div class="eyebrow">THURSDAY, OCTOBER 29, 2026</div><h1 id="pageTitle">Dashboard overview</h1></div><div class="top-actions"><div class="search"><span>⌕</span><input id="searchInput" placeholder="Search students..." oninput="renderStudents()"></div><button class="icon-btn" aria-label="Notifications" onclick="showToast('You’re all caught up!')">♧<i class="dot"></i></button><div class="profile"><div class="avatar">SC</div><div class="profile-text"><strong>Safwa C.A.</strong><small>Administrator</small></div></div></div></header>
   <section class="welcome"><div><div style="font-size:10px;letter-spacing:1.6px;font-weight:800;opacity:.8;margin-bottom:12px">YOUR CAMPUS, SIMPLIFIED</div><h2>Good morning, Safwa! ✨</h2><p>Here’s what’s happening with your students today.<br>Small steps make a big difference.</p><div style="margin-top:18px"><button onclick="openModal()">＋ Add new student</button></div></div><div class="spark">✦</div></section>
   <div class="section-head"><h3>At a glance</h3><a onclick="showToast('Showing the latest overview')">View insights ↗</a></div>
   <section class="stats">
@@ -193,6 +193,20 @@ document.getElementById('searchBox').addEventListener('input', function(e) {
     }
   });
 });
+</script>
+<style>
+  body.dark-theme {
+    --bg: #1a1a24;
+    --panel: #242435;
+    --ink: #ffffff;
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+</style>
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-theme");
+  }
 </script>
 </body>
 </html>
