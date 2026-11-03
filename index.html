@@ -195,18 +195,44 @@ document.getElementById('searchBox').addEventListener('input', function(e) {
 });
 </script>
 <style>
-  body.dark-theme {
+body.dark-theme {
     --bg: #1a1a24;
     --panel: #242435;
     --ink: #ffffff;
     background-color: var(--bg);
     color: var(--ink);
-  }
+}
+body.dark-theme .sidebar,
+body.dark-theme .card,
+body.dark-theme .stat,
+body.dark-theme section,
+body.dark-theme article,
+body.dark-theme table,
+body.dark-theme .bg-white,
+body.dark-theme [class*="card"],
+body.dark-theme [class*="box"],
+body.dark-theme [class*="section"],
+body.dark-theme [class*="container"] {
+    background-color: var(--panel) !important;
+    color: var(--ink) !important;
+}
 </style>
 <script>
-  function toggleDarkMode() {
+ function toggleDarkMode() {
     document.body.classList.toggle("dark-theme");
-  }
+    const isDark = document.body.classList.contains("dark-theme");
+    
+    // Force override background and text color with !important in JS
+    document.querySelectorAll('.card, .card *, [class*="card"], [class*="card"] *, [class*="box"], [class*="box"] *, .at-a-glance, .at-a-glance *').forEach(el => {
+        if (isDark) {
+            el.style.setProperty('background-color', '#242435', 'important');
+            el.style.setProperty('color', '#ffffff', 'important');
+        } else {
+            el.style.removeProperty('background-color');
+            el.style.removeProperty('color');
+        }
+    });
+} 
 </script>
 </body>
 </html>
